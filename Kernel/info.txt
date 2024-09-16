@@ -1,0 +1,65 @@
+Commands:
+
+Needed:
+FMOSkernel.initializeDesktop()
+FMOSkernel.initializewindowheader()
+and
+FMOSkernel.renderFiles()
+or
+FMOSkernel.loadFiles()
+
+File Operations:
+FMOSkernel.deleteFile()
+FMOSkernel.saveFile()
+FMOSkernel.openFile()
+FMOSkernel.disableFileNames()
+FMOSkernel.enableFileNames()
+FMOSkernel.createFile()
+FMOSkernel.renameFile()
+FMOSkernel.executeHTML()
+FMOSkernel.executeJS()
+
+Permanently save files and desktops and filesystem
+FMOSkernel.saveFiles()
+FMOSkernel.deleteSpecificdesktop()
+FMOSkernel.showCurrentFolder()
+FMOSkernel.loadFolderWithNameOnly()
+FMOSkernel.loadFolderWithPath()
+FMOSkernel.saveFolderWithNameOnly()
+FMOSkernel.saveFolderWithPath()
+FMOSkernel.showAllFolders()
+FMOSkernel.deleteAllFolders()
+FMOSkernel.deleteFolderWithNameOnly()
+FMOSkernel.deleteFolderWithPath()
+FMOSkernel.deleteAllFMOSdesktopItems()
+FMOSkernel.showAllFMOSdesktopNames()
+FMOSkernel.loaddesktopContent()
+FMOSkernel.savedesktopWithCustomName()
+FMOSkernel.deletedesktopContents()
+
+Settings menus
+FMOSkernel.settings3()
+FMOSkernel.settings1()
+FMOSkernel.settings2()
+FMOSkernel.apps()
+
+Other Options
+FMOSkernel.restartOS('link to ur os')
+FMOSkernel.openDiscordLink('link to your discord server')
+
+---------------------------------------------------------
+Extra CSS and HTML classes:
+.icon
+.file-label
+.window-header
+.dragging
+.desktop
+#editorWindow
+#fileContent
+#contextMenu
+#htmlPreviewWindow
+#htmlPreview
+#apps-window
+#settings1-window
+#settings2-window
+#settings3-window

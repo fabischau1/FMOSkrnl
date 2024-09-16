@@ -1,0 +1,6 @@
+RESETS THE OS
+
+Commands:
+FMOSreset.resetos()
+
+No extra Css or html needed

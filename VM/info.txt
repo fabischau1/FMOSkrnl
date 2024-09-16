@@ -1,0 +1,74 @@
+Commands:
+
+FMOSvm.vm()
+
+--------------------------------------------------------------------
+
+CSS:
+
+/* Container für das Fenster */
+.windowifra {
+  position: absolute;
+  width: 600px; /* Standardbreite */
+  height: 600px; /* Standardhöhe */
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Kopfbereich des Fensters */
+.window-header {
+  background-color: #f1f1f1;
+  padding: 10px;
+  cursor: move;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Griff zum Ändern der Größe */
+.resize-handle {
+  width: 10px;
+  height: 10px;
+  background-color: #ddd;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  cursor: se-resize;
+}
+
+/* Vollbildmodus-Stil */
+.fullscreen {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  border: none;
+}
+
+/* Optional: Animation beim Öffnen des Fensters */
+.animate-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Stil für die Schaltflächen im Header */
+.window-header button {
+  background: none;
+  border: none;
+  color: #ff5c5c;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Stil für die Schaltflächen im Header beim Hover */
+.window-header button:hover {
+  color: #ff0000;
+}

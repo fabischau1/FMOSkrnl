@@ -1,0 +1,87 @@
+Commands
+
+Activate Terminal:
+FMOSterminal.Terminal()
+
+Run js in terminal:
+FMOSterminal.runNeonTerminalJS()
+
+fullscreen:
+FMOSterminal.toggleTerminalFullscreen()
+
+Close Terminal:
+FMOSterminal.HideTerminal()
+
+---------------------------------------------------------------------
+
+Extra CSS example:
+
+.neon-terminal {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    width: 400px;
+    height: 300px;
+    background-color: #000;
+    color: #0f0;
+    border: 2px solid #0f0;
+    display: none;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.neon-terminal-header {
+    background-color: #111;
+    padding: 10px;
+    cursor: move;
+    border-bottom: 1px solid #0f0;
+}
+
+.neon-terminal-input {
+    width: 100%;
+    height: calc(100% - 40px);
+    background: #000;
+    color: #0f0;
+    border: none;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: monospace;
+    font-size: 14px;
+    overflow-y: auto;
+}
+
+.neon-terminal-buttons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.neon-terminal-button {
+    width: 20px;
+    height: 20px;
+    background-color: #f00;
+    border: none;
+    cursor: pointer;
+}
+
+---------------------------------------------------------------------
+
+HTML example:
+
+	<div class="neon-terminal" id="neonTerminal">
+        <div class="neon-terminal-header">
+            <span>FMOS Pro Terminal</span>
+            <div>
+				<button onclick="FMOSterminal.runNeonTerminalJS()" style="background:none; border:none; color: #ff5c5c; font-size: 16px;" class="redlightcolor">Run</button>
+                <button onclick="FMOSterminal.toggleTerminalFullscreen()" style="background:none; border:none; color: #ff5c5c; font-size: 16px;" class="redlightcolor">🗖</button>
+                <button onclick="FMOSterminal.HideTerminal()" style="background:none; border:none; color: #ff5c5c; font-size: 16px;" class="redlightcolor">X</button>
+            </div>
+        </div>
+        <div class="neon-terminal-body">
+            <textarea id="neonTerminalInput" style="width: 100%; height: 100%; background: transparent; border: none;" class="greenlightcolor" ></textarea>
+        </div>
+        <div class="neon-terminal-footer">
+        </div>
+    </div>

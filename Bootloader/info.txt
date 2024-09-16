@@ -1,0 +1,10 @@
+Commands:
+FMOSbootloader.bootscreen(url)
+
+for example
+FMOSbootloader.bootscreen('https://fabischau1.github.io/FMOS/Bootscreen/FMOS12bootnoterm.html')
+
+---------------------------------------------------------------------------------------------------------
+
+No extra Css classes needed
+
