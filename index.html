@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FMOS Kernel build example os</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="desktop" id="desktop">
+    </div>
+    
+    <div class="taskbar">
+        <button onclick="FMOSkernel.createFile()">New</button>
+        <button onclick="FMOSkernel.uploadFile()">Upload</button>
+		<button onclick="FMOSkernel.settings1()">Settings</button>
+		<button onclick="FMOSkernel.saveFiles()">Save Files</button>
+		<button onclick="FMOSkernel.loadFiles()">Load Files</button>
+		<button onclick="FMOSterminal.Terminal()">Terminal</button>
+    </div>
+
+    <!-- Editor Window -->
+    <div id="editorWindow" class="window">
+        <div class="window-header">
+            <span id="editorTitle">Editor</span>
+            <button onclick="FMOSkernel.closeWindow()" class="close-button">X</button>
+        </div>
+        <div class="window-body">
+            <textarea id="fileContent"></textarea>
+        </div>
+        <div class="window-footer">
+            <button onclick="FMOSkernel.saveFile()" class="action-button">Save</button>
+            <button onclick="FMOSkernel.deleteFile()" class="action-button">Delete</button>
+            <button onclick="FMOSkernel.executeJS()" class="action-button">Run</button>
+        </div>
+    </div>
+	<div id="settings1-window" class="hidden">
+			<button id="option7" onclick="FMOSkernel.enableFileNames()">Enable File Names</button>
+			<button id="option7" onclick="FMOSkernel.disableFileNames()">Disable File Names</button>
+	</div>
+
+    <!-- HTML Preview Window -->
+    <div id="htmlPreviewWindow" class="window" style="display: none;">
+        <div class="window-header">
+            <span id="htmlPreviewTitle">HTML Preview</span>
+            <button onclick="FMOSkernel.closeHTMLPreviewWindow()" class="close-button">X</button>
+        </div>
+        <div class="window-body">
+            <iframe id="htmlPreview" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <!-- Context Menu -->
+    <div id="contextMenu" class="context-menu" style="display: none;">
+        <ul>
+            <li onclick="FMOSkernel.createFile()">New</li>
+			<li onclick="FMOSkernel.openWindow()">Open</li>
+            <li onclick="FMOSkernel.executeJS()">Run</li>
+            <li onclick="FMOSkernel.renameFile()">Rename</li>
+            <li onclick="FMOSkernel.deleteFile()">Delete</li>
+            <li onclick="FMOSkernel.hideContextMenu()">Close</li>
+        </ul>
+    </div>
+	<div class="neon-terminal" id="neonTerminal">
+        <div class="neon-terminal-header">
+            <span>FMOS Pro Terminal</span>
+            <div>
+				<button onclick="FMOSterminal.runNeonTerminalJS()" style="background:none; border:none; color: #ff5c5c; font-size: 16px;" class="redlightcolor">Run</button>
+                <button onclick="FMOSterminal.toggleTerminalFullscreen()" style="background:none; border:none; color: #ff5c5c; font-size: 16px;" class="redlightcolor">🗖</button>
+                <button onclick="FMOSterminal.HideTerminal()" style="background:none; border:none; color: #ff5c5c; font-size: 16px;" class="redlightcolor">X</button>
+            </div>
+        </div>
+        <div class="neon-terminal-body">
+            <textarea id="neonTerminalInput" style="width: 100%; height: 100%; background: transparent; border: none;" class="greenlightcolor" ></textarea>
+        </div>
+        <div class="neon-terminal-footer">
+        </div>
+    </div>
+
+    <!-- Include FMOSkernel.js -->
+    <script src="https://fabischau1.github.io/FMOSkrnl/Kernel/FMOSkernel.js"></script>
+	<script src="https://fabischau1.github.io/FMOSkrnl/Terminal/FMOSterminal.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+			FMOSkernel.renderFiles()
+			FMOSkernel.enableFileNames()
+
+            // Context Menu event
+            document.getElementById('desktop').addEventListener('contextmenu', (e) => {
+                e.preventDefault();
+                FMOSkernel.showContextMenu(e);
+            });
+        });
+    </script>
+</body>
+</html>
