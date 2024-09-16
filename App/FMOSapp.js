@@ -88,6 +88,40 @@ function app(url) {
   }
 }
 
+function closeeeeeeeeeeee() {
+  document.querySelector('.windowstore').remove();
+}
+
+function toggleFullscreenstore() {
+  const iframeWindow = document.querySelector('.windowstore');
+  const iframe = document.querySelector('#iframe');
+  
+  if (iframeWindow.classList.contains('fullscreen')) {
+    iframeWindow.classList.remove('fullscreen');
+    iframeWindow.style.top = '50px';
+    iframeWindow.style.left = '50px';
+    iframeWindow.style.width = '600px';
+    iframeWindow.style.height = '600px';
+    iframe.style.width = '100%';
+    iframe.style.height = '550px';
+  } else {
+    iframeWindow.classList.add('fullscreen');
+    iframeWindow.style.top = '0';
+    iframeWindow.style.left = '0';
+    iframeWindow.style.width = '100vw';
+    iframeWindow.style.height = '100vh';
+    iframe.style.width = '100%';
+    iframe.style.height = 'calc(100vh - 20px)';
+  }
+}
+
+  function handleResizeUp() {
+    isResizing = false;
+    document.removeEventListener('mousemove', handleResizeMove);
+    document.removeEventListener('mouseup', handleResizeUp);
+  }
+}
+
 function closeapp() {
   document.querySelector('.windowstore').remove();
 }
@@ -117,8 +151,8 @@ function toggleFullscreen() {
     // Public API
     return {
         app,
-		toggleFullscreen,
-		closeapp,
+		toggleFullscreenstore,
+		closeeeeeeeeeeee,
 		handleResizeUp,
 		handleResizeMove,
 		handleMouseUp,
